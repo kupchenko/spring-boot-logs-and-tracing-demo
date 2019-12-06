@@ -16,9 +16,8 @@ public class TestController {
     private ThirdPartyServiceClient thirdPartyServiceClient;
 
     @GetMapping("/ok")
-    public ResponseEntity<String> ok(@RequestHeader(value = "traceId", required = false) String traceId) {
+    public ResponseEntity<String> ok() {
         log.info("Some logging with zipkin traceId");
-        log.info("Header traceId {}", traceId);
         return ResponseEntity.ok("test");
     }
 
