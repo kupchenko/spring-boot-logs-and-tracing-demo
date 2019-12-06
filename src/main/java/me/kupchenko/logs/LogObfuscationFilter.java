@@ -22,7 +22,7 @@ public class LogObfuscationFilter extends TurboFilter {
 
     @Override
     public FilterReply decide(Marker marker, Logger logger, Level level, String format, Object[] params, Throwable t) {
-        if (LogUtil.hasPII(format) || paramsHasPii(params)){
+        if (LogUtil.hasPII(format) || paramsHasPii(params)) {
             logger.log(marker, logger.getName(), Level.toLocationAwareLoggerInteger(level), obfuscate(format), obfuscateParams(params), t);
             return FilterReply.DENY;
         }
@@ -30,7 +30,7 @@ public class LogObfuscationFilter extends TurboFilter {
         return FilterReply.NEUTRAL;
     }
 
-    private boolean paramsHasPii(Object[] params){
+    private boolean paramsHasPii(Object[] params) {
         return params != null && Arrays.stream(params)
                 .filter(Objects::nonNull)
                 .map(Objects::toString)
