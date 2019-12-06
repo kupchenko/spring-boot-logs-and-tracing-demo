@@ -1,0 +1,16 @@
+logging:
+  config: "classpath:logback-local.xml"
+  level:
+    root: INFO
+    me:
+      kupchenko: TRACE
+
+client:
+  service:
+    name: log-trace-service
+    url: http://localhost:8080/
+
+---
+spring.profiles: prod
+
+logging.config: "classpath:logback-json.xml"
