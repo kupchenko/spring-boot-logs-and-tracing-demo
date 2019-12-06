@@ -11,3 +11,11 @@
 ```
 ./gradlew bootRun --args='--spring.profiles.active=prod'
 ```
+
+* Build docker image:
+```
+docker build -f src/main/docker/Dockerfile .
+```
+
+
+docker build
