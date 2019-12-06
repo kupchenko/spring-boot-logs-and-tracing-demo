@@ -17,5 +17,7 @@
 docker build -f src/main/docker/Dockerfile .
 ```
 
-
-docker build
+* Run docker image:
+```
+docker run [IMAGE_ID]
+```
