@@ -17,7 +17,12 @@
 docker build -f src/main/docker/Dockerfile .
 ```
 
+* Tag image:
+```
+docker tag [IMAGE_ID] dkupc/spring-boot-logs-and-tracing:1.0
+```
+
 * Run docker image:
 ```
-docker run [IMAGE_ID]
+docker run -p 8080:8080 -d [IMAGE_ID]
 ```
